@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		461A59521E5D4816008990E5 /* ZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461A59511E5D4816008990E5 /* ZoomViewController.swift */; };
 		46F67FC91E5C276400B8976A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F67FC81E5C276400B8976A /* AppDelegate.swift */; };
-		46F67FCB1E5C276400B8976A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F67FCA1E5C276400B8976A /* ViewController.swift */; };
 		46F67FCE1E5C276400B8976A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46F67FCC1E5C276400B8976A /* Main.storyboard */; };
 		46F67FD11E5C276400B8976A /* StrydDataVisualization.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46F67FCF1E5C276400B8976A /* StrydDataVisualization.xcdatamodeld */; };
 		46F67FD31E5C276400B8976A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46F67FD21E5C276400B8976A /* Assets.xcassets */; };
 		46F67FD61E5C276400B8976A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46F67FD41E5C276400B8976A /* LaunchScreen.storyboard */; };
+		46F67FDF1E5C27B100B8976A /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F67FDE1E5C27B100B8976A /* GraphViewController.swift */; };
+		46F67FE71E5C296B00B8976A /* Stryd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F67FE61E5C296B00B8976A /* Stryd.swift */; };
+		46F67FEA1E5CD78200B8976A /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F67FE91E5CD78200B8976A /* GraphView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		461A59511E5D4816008990E5 /* ZoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomViewController.swift; sourceTree = "<group>"; };
 		46F67FC51E5C276400B8976A /* StrydDataVisualization.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StrydDataVisualization.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46F67FC81E5C276400B8976A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		46F67FCA1E5C276400B8976A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		46F67FCD1E5C276400B8976A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		46F67FD01E5C276400B8976A /* StrydDataVisualization.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StrydDataVisualization.xcdatamodel; sourceTree = "<group>"; };
 		46F67FD21E5C276400B8976A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46F67FD51E5C276400B8976A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46F67FD71E5C276400B8976A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46F67FDE1E5C27B100B8976A /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		46F67FE61E5C296B00B8976A /* Stryd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stryd.swift; sourceTree = "<group>"; };
+		46F67FE91E5CD78200B8976A /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +62,10 @@
 		46F67FC71E5C276400B8976A /* StrydDataVisualization */ = {
 			isa = PBXGroup;
 			children = (
+				46F67FE81E5CD72E00B8976A /* Views */,
+				46F67FE01E5C291000B8976A /* Models */,
+				46F67FDD1E5C279100B8976A /* View Controllers */,
 				46F67FC81E5C276400B8976A /* AppDelegate.swift */,
-				46F67FCA1E5C276400B8976A /* ViewController.swift */,
 				46F67FCC1E5C276400B8976A /* Main.storyboard */,
 				46F67FD21E5C276400B8976A /* Assets.xcassets */,
 				46F67FD41E5C276400B8976A /* LaunchScreen.storyboard */,
@@ -65,6 +73,31 @@
 				46F67FCF1E5C276400B8976A /* StrydDataVisualization.xcdatamodeld */,
 			);
 			path = StrydDataVisualization;
+			sourceTree = "<group>";
+		};
+		46F67FDD1E5C279100B8976A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				46F67FDE1E5C27B100B8976A /* GraphViewController.swift */,
+				461A59511E5D4816008990E5 /* ZoomViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		46F67FE01E5C291000B8976A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				46F67FE61E5C296B00B8976A /* Stryd.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		46F67FE81E5CD72E00B8976A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				46F67FE91E5CD78200B8976A /* GraphView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,9 +173,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46F67FCB1E5C276400B8976A /* ViewController.swift in Sources */,
+				46F67FEA1E5CD78200B8976A /* GraphView.swift in Sources */,
+				461A59521E5D4816008990E5 /* ZoomViewController.swift in Sources */,
+				46F67FDF1E5C27B100B8976A /* GraphViewController.swift in Sources */,
 				46F67FC91E5C276400B8976A /* AppDelegate.swift in Sources */,
 				46F67FD11E5C276400B8976A /* StrydDataVisualization.xcdatamodeld in Sources */,
+				46F67FE71E5C296B00B8976A /* Stryd.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +340,7 @@
 				46F67FDC1E5C276400B8976A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
