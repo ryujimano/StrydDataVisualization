@@ -36,13 +36,31 @@ import Foundation
     let bottomBorder:CGFloat = 50
     var graphHeight:CGFloat!
 
+    //MARK: - Draw
+    //draw graph
     override func draw(_ rect: CGRect) {
         
         width = rect.width
         height = rect.height
         
+        
+        //graph view configuration
         powerLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
         heartLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
+        
+        if isPower {
+            powerLabel.alpha = 1
+        }
+        else {
+            powerLabel.alpha = 0
+        }
+        
+        if isHeart {
+            heartLabel.alpha = 1
+        }
+        else {
+            heartLabel.alpha = 0
+        }
         
         path = UIBezierPath(roundedRect: rect, byRoundingCorners: .allCorners, cornerRadii: CGSize(width: 10, height: 10))
         path.addClip()
@@ -65,6 +83,8 @@ import Foundation
     
         graphHeight = height - topBorder - bottomBorder
         
+        
+        //draw x and y axis lines
         let yLinePath = UIBezierPath()
         yLinePath.move(to: CGPoint(x: margin, y: topBorder))
         yLinePath.addLine(to: CGPoint(x: width - margin, y: topBorder))
@@ -88,6 +108,7 @@ import Foundation
         yLinePath.stroke()
         
         
+        //draw power and heart rate lines
         if let stryd = stryd {
             if isPower {
                 drawPowerLine(stryd: stryd)
@@ -95,11 +116,16 @@ import Foundation
             if isHeart {
                 drawHearRateLine(stryd: stryd)
             }
+            print(stryd.power[0])
+            print(stryd.heartRate[0])
         }
 
     }
     
+    
+    //MARK: - Draw Power Line
     func drawPowerLine(stryd: Stryd) {
+        //set point locations
         let columnXPoint = { (column: Int) -> CGFloat in
             let gap = (self.width - self.margin * 2 - 4) / CGFloat(stryd.power.count - 1)
             var x = CGFloat(column) * gap
@@ -117,6 +143,8 @@ import Foundation
         UIColor.blue.setFill()
         UIColor.blue.setStroke()
         
+        
+        //draw lines for each point
         let graphPath = UIBezierPath()
         graphPath.move(to: CGPoint(x: columnXPoint(0), y: columnXPoint(stryd.power[0])))
         
@@ -129,7 +157,10 @@ import Foundation
         graphPath.stroke()
     }
     
+    
+    //MARK: - Draw Heart Rate Line
     func drawHearRateLine(stryd: Stryd) {
+        //set point locations
         let columnXPoint = { (column: Int) -> CGFloat in
             let gap = (self.width - self.margin * 2 - 4) / CGFloat(stryd.heartRate.count - 1)
             var x = CGFloat(column) * gap
@@ -147,6 +178,8 @@ import Foundation
         UIColor.red.setFill()
         UIColor.red.setStroke()
         
+        
+        //draw lines for each point
         let graphPath = UIBezierPath()
         graphPath.move(to: CGPoint(x: columnXPoint(0), y: columnXPoint(stryd.heartRate[0])))
         

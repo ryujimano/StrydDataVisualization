@@ -16,6 +16,7 @@ class ZoomViewController: UIViewController, UIScrollViewDelegate {
     var isHeart: Bool!
     var isPower: Bool!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,11 +33,13 @@ class ZoomViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
+    
+    //MARK: - ScrollView
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return graphView
     }
 
-    
+    //MARK: Button
     @IBAction func onDoneTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

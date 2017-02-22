@@ -16,6 +16,7 @@ class GraphViewController: UIViewController, UIScrollViewDelegate {
     
     var stryd: Stryd!
 
+    //MARK: - View Configuration
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
@@ -30,6 +31,7 @@ class GraphViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //get data from API
         let url = URL(string: "https://www.stryd.com/b/interview/data")!
         stryd = Stryd(forURL: url, callBack: {
             self.graphView.stryd = self.stryd
@@ -42,9 +44,6 @@ class GraphViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return graphView
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -52,6 +51,8 @@ class GraphViewController: UIViewController, UIScrollViewDelegate {
     }
     
     
+    
+    //MARK: - Buttons
     @IBAction func powerButtonTapped(_ sender: Any) {
         if graphView.isPower {
             graphView.isPower = false
@@ -74,12 +75,15 @@ class GraphViewController: UIViewController, UIScrollViewDelegate {
         }
     }
 
+    
+    //MARK: Graph
     func onGraphTap() {
         performSegue(withIdentifier: "graphSegue", sender: self)
     }
     
+    
+    
     // MARK: - Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! ZoomViewController
         destination.graphView = self.graphView
