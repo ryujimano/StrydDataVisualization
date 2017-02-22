@@ -8,6 +8,6 @@ Line graph initially shows both heart rate and power data. The heart rate data i
 The power and heart rate buttons each turns its respective lines on/off. To view the graph in larger scale, tap on the graph, and a new zoomable view will show modally.
 
 Some Issues:
-- The range of the power data is relatively high, so line drawing is fairly slow. This should be fixed so it can render faster in the future (e.g. stop redrawing the view to make it faster).
+- The range of the power data is relatively high, so line drawing is fairly slow. This should be fixed so it can render faster in the future (for example, stop redrawing the view everytime).
 - The initial value in both data have a random spike that needs to be fixed.
 - The ScrollView fixes its height, making zooming slightly difficult.
